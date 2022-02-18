@@ -99,13 +99,11 @@
 		B456A71E27BFD10000F4868A /* Todo_App_With_RealmDB */ = {
 			isa = PBXGroup;
 			children = (
-				B456A71F27BFD10000F4868A /* AppDelegate.swift */,
-				B456A72127BFD10000F4868A /* SceneDelegate.swift */,
-				B456A72327BFD10000F4868A /* ViewController.swift */,
-				B456A72527BFD10000F4868A /* Main.storyboard */,
-				B456A72827BFD10300F4868A /* Assets.xcassets */,
-				B456A72A27BFD10300F4868A /* LaunchScreen.storyboard */,
-				B456A72D27BFD10300F4868A /* Info.plist */,
+				B456A74F27BFD14100F4868A /* Application */,
+				B456A75327BFD17100F4868A /* Views */,
+				B456A75127BFD15800F4868A /* Storyboard */,
+				B456A75227BFD16800F4868A /* Resources */,
+				B456A75027BFD14C00F4868A /* LaunchScreen */,
 			);
 			path = Todo_App_With_RealmDB;
 			sourceTree = "<group>";
@@ -125,6 +123,48 @@
 				B456A74227BFD10400F4868A /* Todo_App_With_RealmDBUITestsLaunchTests.swift */,
 			);
 			path = Todo_App_With_RealmDBUITests;
+			sourceTree = "<group>";
+		};
+		B456A74F27BFD14100F4868A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B456A71F27BFD10000F4868A /* AppDelegate.swift */,
+				B456A72127BFD10000F4868A /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B456A75027BFD14C00F4868A /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B456A72A27BFD10300F4868A /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		B456A75127BFD15800F4868A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B456A72527BFD10000F4868A /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B456A75227BFD16800F4868A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B456A72827BFD10300F4868A /* Assets.xcassets */,
+				B456A72D27BFD10300F4868A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B456A75327BFD17100F4868A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B456A72327BFD10000F4868A /* ViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,7 +481,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8VVW6QSAS9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Todo_App_With_RealmDB/Info.plist;
+				INFOPLIST_FILE = Todo_App_With_RealmDB/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -469,7 +509,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8VVW6QSAS9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Todo_App_With_RealmDB/Info.plist;
+				INFOPLIST_FILE = Todo_App_With_RealmDB/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
