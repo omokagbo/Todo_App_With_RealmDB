@@ -30,6 +30,7 @@
 		B456A77727C01DF500F4868A /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77627C01DF500F4868A /* LocalDataSource.swift */; };
 		B456A77A27C04D5200F4868A /* ITodoLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77927C04D5200F4868A /* ITodoLocalRepository.swift */; };
 		B456A77C27C04D6600F4868A /* TodoLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77B27C04D6600F4868A /* TodoLocalRepository.swift */; };
+		B456A78027C0516000F4868A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77F27C0516000F4868A /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		B456A77627C01DF500F4868A /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		B456A77927C04D5200F4868A /* ITodoLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITodoLocalRepository.swift; sourceTree = "<group>"; };
 		B456A77B27C04D6600F4868A /* TodoLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoLocalRepository.swift; sourceTree = "<group>"; };
+		B456A77F27C0516000F4868A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				B456A74F27BFD14100F4868A /* Application */,
+				B456A77E27C0514B00F4868A /* Coordinators */,
 				B456A75E27BFFA9900F4868A /* DI */,
 				B456A75427BFD56700F4868A /* Model */,
 				B456A75327BFD17100F4868A /* Views */,
@@ -253,6 +256,14 @@
 				B456A77B27C04D6600F4868A /* TodoLocalRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		B456A77E27C0514B00F4868A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				B456A77F27C0516000F4868A /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +408,7 @@
 				B456A76D27C00B9800F4868A /* AppConstants.swift in Sources */,
 				B456A77527C01DDD00F4868A /* ILocalDataSource.swift in Sources */,
 				B456A76027BFFAAD00F4868A /* AppDependencyProvider.swift in Sources */,
+				B456A78027C0516000F4868A /* AppCoordinator.swift in Sources */,
 				B456A72427BFD10000F4868A /* RootViewController.swift in Sources */,
 				B456A77C27C04D6600F4868A /* TodoLocalRepository.swift in Sources */,
 				B456A77A27C04D5200F4868A /* ITodoLocalRepository.swift in Sources */,
