@@ -1,5 +1,5 @@
 //
-// DependencyProvider.swift
+// AppDependencyProvider.swift
 // Todo_App_With_RealmDB
 
 //  Created by Emmanuel Omokagbo on 18/02/2022
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-struct DependencyProvider {
+struct AppDependencyProvider {
     static var todos = [Todo]()
     static var realm = try! Realm()
     

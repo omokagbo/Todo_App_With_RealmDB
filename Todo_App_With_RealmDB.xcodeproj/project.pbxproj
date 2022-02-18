@@ -18,7 +18,7 @@
 		B456A75927BFD5DC00F4868A /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75827BFD5DC00F4868A /* Todo.swift */; };
 		B456A75B27BFDDFB00F4868A /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75A27BFDDFB00F4868A /* TodoViewModel.swift */; };
 		B456A75D27BFEACC00F4868A /* ITodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75C27BFEACC00F4868A /* ITodoViewModel.swift */; };
-		B456A76027BFFAAD00F4868A /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75F27BFFAAD00F4868A /* DependencyProvider.swift */; };
+		B456A76027BFFAAD00F4868A /* AppDependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75F27BFFAAD00F4868A /* AppDependencyProvider.swift */; };
 		B456A76227C0031400F4868A /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A76127C0031400F4868A /* DialogViewController.swift */; };
 		B456A76527C0032D00F4868A /* UIViewcontroller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A76427C0032D00F4868A /* UIViewcontroller+Extension.swift */; };
 		B456A76827C0036900F4868A /* Dialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B456A76727C0036900F4868A /* Dialog.storyboard */; };
@@ -65,7 +65,7 @@
 		B456A75827BFD5DC00F4868A /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		B456A75A27BFDDFB00F4868A /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		B456A75C27BFEACC00F4868A /* ITodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITodoViewModel.swift; sourceTree = "<group>"; };
-		B456A75F27BFFAAD00F4868A /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
+		B456A75F27BFFAAD00F4868A /* AppDependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyProvider.swift; sourceTree = "<group>"; };
 		B456A76127C0031400F4868A /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		B456A76427C0032D00F4868A /* UIViewcontroller+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+Extension.swift"; sourceTree = "<group>"; };
 		B456A76727C0036900F4868A /* Dialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dialog.storyboard; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		B456A75E27BFFA9900F4868A /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				B456A75F27BFFAAD00F4868A /* DependencyProvider.swift */,
+				B456A75F27BFFAAD00F4868A /* AppDependencyProvider.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -396,7 +396,7 @@
 				B456A76527C0032D00F4868A /* UIViewcontroller+Extension.swift in Sources */,
 				B456A76D27C00B9800F4868A /* AppConstants.swift in Sources */,
 				B456A77527C01DDD00F4868A /* ILocalDataSource.swift in Sources */,
-				B456A76027BFFAAD00F4868A /* DependencyProvider.swift in Sources */,
+				B456A76027BFFAAD00F4868A /* AppDependencyProvider.swift in Sources */,
 				B456A72427BFD10000F4868A /* RootViewController.swift in Sources */,
 				B456A77C27C04D6600F4868A /* TodoLocalRepository.swift in Sources */,
 				B456A77A27C04D5200F4868A /* ITodoLocalRepository.swift in Sources */,
