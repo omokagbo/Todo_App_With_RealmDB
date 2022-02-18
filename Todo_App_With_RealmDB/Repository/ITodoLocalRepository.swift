@@ -1,5 +1,5 @@
 //
-// ITodoViewModel.swift
+// ITodoLocalRepository.swift
 // Todo_App_With_RealmDB
 
 //  Created by Emmanuel Omokagbo on 18/02/2022
@@ -7,14 +7,13 @@
 	
 
 import Foundation
-import RealmSwift
 
-protocol ITodoViewModel {
-    var todos: [Todo] { get set }
-    var repo: ITodoLocalRepository { get set }
+protocol ITodoLocalRepository {
+    var dataSource: ILocalDataSource { get set }
     
     func saveTodo(todo: Todo)
-    func fetchAllTodos()
+    func fetchAllTodos() -> [Todo]
+    func editTodo(oldTodo: Todo, newTodo: Todo)
     func deleteTodo(todo: Todo)
-    func updateTodo(oldTodo: Todo, newTodo: Todo)
+    func getDatabaseURL() -> URL?
 }

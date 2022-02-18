@@ -17,8 +17,12 @@ struct DependencyProvider {
         return LocalDataSource(realm: realm)
     }
     
+    static var repo: ITodoLocalRepository {
+        return TodoLocalRepository(dataSource: self.dataSource)
+    }
+    
     static var todoViewModel: ITodoViewModel {
-        return TodoViewModel(todos: self.todos, dataSource: self.dataSource)
+        return TodoViewModel(todos: self.todos, repo: self.repo)
     }
     
     static var rootViewController: RootViewController {
