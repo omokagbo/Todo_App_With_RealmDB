@@ -16,6 +16,7 @@
 		B456A73727BFD10300F4868A /* Todo_App_With_RealmDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A73627BFD10300F4868A /* Todo_App_With_RealmDBTests.swift */; };
 		B456A74127BFD10400F4868A /* Todo_App_With_RealmDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A74027BFD10400F4868A /* Todo_App_With_RealmDBUITests.swift */; };
 		B456A74327BFD10400F4868A /* Todo_App_With_RealmDBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A74227BFD10400F4868A /* Todo_App_With_RealmDBUITestsLaunchTests.swift */; };
+		B456A75927BFD5DC00F4868A /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75827BFD5DC00F4868A /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B456A73C27BFD10400F4868A /* Todo_App_With_RealmDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Todo_App_With_RealmDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B456A74027BFD10400F4868A /* Todo_App_With_RealmDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo_App_With_RealmDBUITests.swift; sourceTree = "<group>"; };
 		B456A74227BFD10400F4868A /* Todo_App_With_RealmDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo_App_With_RealmDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B456A75827BFD5DC00F4868A /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				B456A74F27BFD14100F4868A /* Application */,
+				B456A75427BFD56700F4868A /* Model */,
 				B456A75327BFD17100F4868A /* Views */,
+				B456A75727BFD5A000F4868A /* ViewModel */,
 				B456A75127BFD15800F4868A /* Storyboard */,
 				B456A75227BFD16800F4868A /* Resources */,
 				B456A75027BFD14C00F4868A /* LaunchScreen */,
@@ -165,6 +169,21 @@
 				B456A72327BFD10000F4868A /* ViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B456A75427BFD56700F4868A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B456A75827BFD5DC00F4868A /* Todo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B456A75727BFD5A000F4868A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +320,7 @@
 				B456A72427BFD10000F4868A /* ViewController.swift in Sources */,
 				B456A72027BFD10000F4868A /* AppDelegate.swift in Sources */,
 				B456A72227BFD10000F4868A /* SceneDelegate.swift in Sources */,
+				B456A75927BFD5DC00F4868A /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
