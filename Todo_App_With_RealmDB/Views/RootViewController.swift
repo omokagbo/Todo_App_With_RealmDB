@@ -12,15 +12,15 @@ final class RootViewController: UIViewController {
     
     // MARK: - Properties
     
+    var todoViewModel: ITodoViewModel!
+    
     private lazy var table: UITableView = {
         let table = UITableView()
         return table
     }()
     
-    var todoViewModel: ITodoViewModel!
-    
     // MARK: -
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(table)
@@ -44,6 +44,10 @@ final class RootViewController: UIViewController {
         isAddNewTodo(isAdd: true, index: 0)
     }
     
+    /// Function to Add or Update a A Todo Item
+    /// - Parameters:
+    ///   - isAdd: value to show if it is a new todo item or an update to an existing todo item. If it is true, it is a new todo item else it is updating an existing todo item
+    ///   - index: index of the todo item
     fileprivate func isAddNewTodo(isAdd: Bool, index: Int) {
         let alertController = UIAlertController(title: isAdd ? "Add New Todo" : "Update your todo", message: "Please enter your todo details", preferredStyle: .alert)
         
@@ -56,7 +60,7 @@ final class RootViewController: UIViewController {
         }
         
         alertController.addAction(UIAlertAction(title: isAdd ? "Save" : "Update", style: .default, handler: { [weak self] _ in
-            if let title = alertController.textFields?.first?.text, let details = alertController.textFields?[1].text {
+            if let title = alertController.textFields?.first?.text, !title.isEmpty, let details = alertController.textFields?[1].text, !details.isEmpty {
                 let todo = Todo(title: title, details: details)
                 if isAdd {
                     self?.todoViewModel.todos.insert(todo, at: index)
@@ -64,6 +68,12 @@ final class RootViewController: UIViewController {
                     self?.todoViewModel.todos[index] = todo
                 }
                 self?.table.reloadData()
+            } else {
+                self?.presentDialog(title: "Invalid Entries!", details: "Please, ensure to enter in the title and details of your todo.", buttonTitle: "OK", completion: {
+                    self?.dismiss(animated: true, completion: {
+                        self?.present(alertController, animated: true)
+                    })
+                })
             }
         }))
         

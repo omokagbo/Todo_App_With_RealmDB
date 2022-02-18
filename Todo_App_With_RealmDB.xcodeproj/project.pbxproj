@@ -19,6 +19,11 @@
 		B456A75B27BFDDFB00F4868A /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75A27BFDDFB00F4868A /* TodoViewModel.swift */; };
 		B456A75D27BFEACC00F4868A /* ITodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75C27BFEACC00F4868A /* ITodoViewModel.swift */; };
 		B456A76027BFFAAD00F4868A /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75F27BFFAAD00F4868A /* DependencyProvider.swift */; };
+		B456A76227C0031400F4868A /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A76127C0031400F4868A /* DialogViewController.swift */; };
+		B456A76527C0032D00F4868A /* UIViewcontroller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A76427C0032D00F4868A /* UIViewcontroller+Extension.swift */; };
+		B456A76827C0036900F4868A /* Dialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B456A76727C0036900F4868A /* Dialog.storyboard */; };
+		B456A76B27C0040000F4868A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A76A27C0040000F4868A /* UIView+Extension.swift */; };
+		B456A76D27C00B9800F4868A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A76C27C00B9800F4868A /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		B456A75A27BFDDFB00F4868A /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		B456A75C27BFEACC00F4868A /* ITodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITodoViewModel.swift; sourceTree = "<group>"; };
 		B456A75F27BFFAAD00F4868A /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
+		B456A76127C0031400F4868A /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		B456A76427C0032D00F4868A /* UIViewcontroller+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+Extension.swift"; sourceTree = "<group>"; };
+		B456A76727C0036900F4868A /* Dialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dialog.storyboard; sourceTree = "<group>"; };
+		B456A76A27C0040000F4868A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B456A76C27C00B9800F4868A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +115,14 @@
 		B456A71E27BFD10000F4868A /* Todo_App_With_RealmDB */ = {
 			isa = PBXGroup;
 			children = (
-				B456A75E27BFFA9900F4868A /* DI */,
 				B456A74F27BFD14100F4868A /* Application */,
+				B456A75E27BFFA9900F4868A /* DI */,
 				B456A75427BFD56700F4868A /* Model */,
 				B456A75327BFD17100F4868A /* Views */,
 				B456A75727BFD5A000F4868A /* ViewModel */,
+				B456A76627C0035200F4868A /* Storyboards */,
 				B456A75227BFD16800F4868A /* Resources */,
+				B456A76927C003EB00F4868A /* Utils */,
 				B456A75027BFD14C00F4868A /* LaunchScreen */,
 			);
 			path = Todo_App_With_RealmDB;
@@ -162,6 +174,7 @@
 		B456A75327BFD17100F4868A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B456A76127C0031400F4868A /* DialogViewController.swift */,
 				B456A72327BFD10000F4868A /* RootViewController.swift */,
 			);
 			path = Views;
@@ -190,6 +203,24 @@
 				B456A75F27BFFAAD00F4868A /* DependencyProvider.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		B456A76627C0035200F4868A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B456A76727C0036900F4868A /* Dialog.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B456A76927C003EB00F4868A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B456A76427C0032D00F4868A /* UIViewcontroller+Extension.swift */,
+				B456A76A27C0040000F4868A /* UIView+Extension.swift */,
+				B456A76C27C00B9800F4868A /* AppConstants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B456A72C27BFD10300F4868A /* LaunchScreen.storyboard in Resources */,
+				B456A76827C0036900F4868A /* Dialog.storyboard in Resources */,
 				B456A72927BFD10300F4868A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,12 +354,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B456A76527C0032D00F4868A /* UIViewcontroller+Extension.swift in Sources */,
+				B456A76D27C00B9800F4868A /* AppConstants.swift in Sources */,
 				B456A76027BFFAAD00F4868A /* DependencyProvider.swift in Sources */,
 				B456A72427BFD10000F4868A /* RootViewController.swift in Sources */,
 				B456A72027BFD10000F4868A /* AppDelegate.swift in Sources */,
 				B456A75D27BFEACC00F4868A /* ITodoViewModel.swift in Sources */,
+				B456A76227C0031400F4868A /* DialogViewController.swift in Sources */,
 				B456A72227BFD10000F4868A /* SceneDelegate.swift in Sources */,
 				B456A75B27BFDDFB00F4868A /* TodoViewModel.swift in Sources */,
+				B456A76B27C0040000F4868A /* UIView+Extension.swift in Sources */,
 				B456A75927BFD5DC00F4868A /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
