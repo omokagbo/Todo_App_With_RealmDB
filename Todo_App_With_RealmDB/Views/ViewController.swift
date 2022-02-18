@@ -51,13 +51,17 @@ class ViewController: UIViewController {
         }
         
         alertController.addTextField { [weak self] details in
-            details.placeholder = isAdd ? "Enter Todo details" : self?.todos[index].title
+            details.placeholder = isAdd ? "Enter Todo details" : self?.todos[index].details
         }
         
-        alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak self] _ in
+        alertController.addAction(UIAlertAction(title: isAdd ? "Save" : "Update", style: .default, handler: { [weak self] _ in
             if let title = alertController.textFields?.first?.text, let details = alertController.textFields?[1].text {
                 let todo = Todo(title: title, details: details)
-                self?.todos.insert(todo, at: 0)
+                if isAdd {
+                    self?.todos.insert(todo, at: index)
+                } else {
+                    self?.todos[index] = todo
+                }
                 self?.table.reloadData()
             }
         }))
@@ -74,7 +78,8 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel?.text = todos[indexPath.row].title
         cell.detailTextLabel?.text = todos[indexPath.row].details
         return cell
@@ -85,6 +90,23 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        isAddNewTodo(isAdd: false, index: indexPath.row)
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+         
+        let save = UIContextualAction(style: .normal, title: "Edit") { [weak self] _, _, _ in
+            self?.isAddNewTodo(isAdd: false, index: indexPath.row)
+        }
+        save.backgroundColor = .systemGreen
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, _ in
+            self?.todos.remove(at: indexPath.row)
+            self?.table.reloadData()
+        }
+        
+        let swipeActionConfiguration = UISwipeActionsConfiguration(actions: [save, delete])
+        return swipeActionConfiguration
+    }
+    
 }
 
