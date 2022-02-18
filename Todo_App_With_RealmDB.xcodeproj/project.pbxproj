@@ -9,14 +9,16 @@
 /* Begin PBXBuildFile section */
 		B456A72027BFD10000F4868A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A71F27BFD10000F4868A /* AppDelegate.swift */; };
 		B456A72227BFD10000F4868A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A72127BFD10000F4868A /* SceneDelegate.swift */; };
-		B456A72427BFD10000F4868A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A72327BFD10000F4868A /* ViewController.swift */; };
-		B456A72727BFD10000F4868A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B456A72527BFD10000F4868A /* Main.storyboard */; };
+		B456A72427BFD10000F4868A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A72327BFD10000F4868A /* RootViewController.swift */; };
 		B456A72927BFD10300F4868A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B456A72827BFD10300F4868A /* Assets.xcassets */; };
 		B456A72C27BFD10300F4868A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B456A72A27BFD10300F4868A /* LaunchScreen.storyboard */; };
 		B456A73727BFD10300F4868A /* Todo_App_With_RealmDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A73627BFD10300F4868A /* Todo_App_With_RealmDBTests.swift */; };
 		B456A74127BFD10400F4868A /* Todo_App_With_RealmDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A74027BFD10400F4868A /* Todo_App_With_RealmDBUITests.swift */; };
 		B456A74327BFD10400F4868A /* Todo_App_With_RealmDBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A74227BFD10400F4868A /* Todo_App_With_RealmDBUITestsLaunchTests.swift */; };
 		B456A75927BFD5DC00F4868A /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75827BFD5DC00F4868A /* Todo.swift */; };
+		B456A75B27BFDDFB00F4868A /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75A27BFDDFB00F4868A /* TodoViewModel.swift */; };
+		B456A75D27BFEACC00F4868A /* ITodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75C27BFEACC00F4868A /* ITodoViewModel.swift */; };
+		B456A76027BFFAAD00F4868A /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A75F27BFFAAD00F4868A /* DependencyProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +42,7 @@
 		B456A71C27BFD10000F4868A /* Todo_App_With_RealmDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo_App_With_RealmDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B456A71F27BFD10000F4868A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B456A72127BFD10000F4868A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B456A72327BFD10000F4868A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B456A72627BFD10000F4868A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B456A72327BFD10000F4868A /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		B456A72827BFD10300F4868A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B456A72B27BFD10300F4868A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B456A72D27BFD10300F4868A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		B456A74027BFD10400F4868A /* Todo_App_With_RealmDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo_App_With_RealmDBUITests.swift; sourceTree = "<group>"; };
 		B456A74227BFD10400F4868A /* Todo_App_With_RealmDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo_App_With_RealmDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B456A75827BFD5DC00F4868A /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		B456A75A27BFDDFB00F4868A /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		B456A75C27BFEACC00F4868A /* ITodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITodoViewModel.swift; sourceTree = "<group>"; };
+		B456A75F27BFFAAD00F4868A /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,11 @@
 		B456A71E27BFD10000F4868A /* Todo_App_With_RealmDB */ = {
 			isa = PBXGroup;
 			children = (
+				B456A75E27BFFA9900F4868A /* DI */,
 				B456A74F27BFD14100F4868A /* Application */,
 				B456A75427BFD56700F4868A /* Model */,
 				B456A75327BFD17100F4868A /* Views */,
 				B456A75727BFD5A000F4868A /* ViewModel */,
-				B456A75127BFD15800F4868A /* Storyboard */,
 				B456A75227BFD16800F4868A /* Resources */,
 				B456A75027BFD14C00F4868A /* LaunchScreen */,
 			);
@@ -146,14 +150,6 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
-		B456A75127BFD15800F4868A /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				B456A72527BFD10000F4868A /* Main.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		B456A75227BFD16800F4868A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +162,7 @@
 		B456A75327BFD17100F4868A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B456A72327BFD10000F4868A /* ViewController.swift */,
+				B456A72327BFD10000F4868A /* RootViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,8 +178,18 @@
 		B456A75727BFD5A000F4868A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B456A75C27BFEACC00F4868A /* ITodoViewModel.swift */,
+				B456A75A27BFDDFB00F4868A /* TodoViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B456A75E27BFFA9900F4868A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B456A75F27BFFAAD00F4868A /* DependencyProvider.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +298,6 @@
 			files = (
 				B456A72C27BFD10300F4868A /* LaunchScreen.storyboard in Resources */,
 				B456A72927BFD10300F4868A /* Assets.xcassets in Resources */,
-				B456A72727BFD10000F4868A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,9 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B456A72427BFD10000F4868A /* ViewController.swift in Sources */,
+				B456A76027BFFAAD00F4868A /* DependencyProvider.swift in Sources */,
+				B456A72427BFD10000F4868A /* RootViewController.swift in Sources */,
 				B456A72027BFD10000F4868A /* AppDelegate.swift in Sources */,
+				B456A75D27BFEACC00F4868A /* ITodoViewModel.swift in Sources */,
 				B456A72227BFD10000F4868A /* SceneDelegate.swift in Sources */,
+				B456A75B27BFDDFB00F4868A /* TodoViewModel.swift in Sources */,
 				B456A75927BFD5DC00F4868A /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,14 +365,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B456A72527BFD10000F4868A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B456A72627BFD10000F4868A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B456A72A27BFD10300F4868A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -504,7 +504,6 @@
 				INFOPLIST_FILE = Todo_App_With_RealmDB/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -533,7 +532,6 @@
 				INFOPLIST_FILE = Todo_App_With_RealmDB/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
