@@ -32,12 +32,25 @@ final class LocalDataSource: ILocalDataSource {
         return Array(realm.objects(Todo.self))
     }
     
-    func editTodo(todo: Todo) {
-        
+    func editTodo(oldTodo: Todo, newTodo: Todo) {
+        do {
+            try realm.write {
+                oldTodo.title = newTodo.title
+                oldTodo.details = newTodo.details
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func deleteTodo(todo: Todo) {
-        
+        do {
+            try realm.write({
+                realm.delete(todo)
+            })
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func getDatabaseURL() -> URL? {

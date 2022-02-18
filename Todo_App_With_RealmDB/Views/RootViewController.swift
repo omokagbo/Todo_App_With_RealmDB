@@ -19,29 +19,43 @@ final class RootViewController: UIViewController {
         return table
     }()
     
-    // MARK: -
+    private lazy var noTodosLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "No Todos yet!"
+        lbl.textAlignment = .center
+        lbl.font = UIFont(name: "Avenir", size: 20)
+        return lbl
+    }()
+    
+    // MARK:
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(table)
         setupUI()
-        print(todoViewModel.dataSource.getDatabaseURL() ?? "Could not get location of database")
+        //        print(todoViewModel.dataSource.getDatabaseURL() ?? "Could not get location of database")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         todoViewModel.fetchAllTodos()
+        table.reloadData()
     }
     
     // MARK: - Helpers
     
     fileprivate func setupUI() {
         title = "Todos"
+        
         view.addSubview(table)
         table.frame = view.bounds
         table.delegate = self
         table.dataSource = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        view.addSubview(noTodosLabel)
+        noTodosLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 30)
+        noTodosLabel.center = view.center
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewTodo))
         
@@ -74,13 +88,9 @@ final class RootViewController: UIViewController {
                     self?.todoViewModel.todos.insert(todo, at: index)
                     self?.todoViewModel.saveTodo(todo: todo)
                 } else {
-                    self?.todoViewModel.todos[index] = todo
+                    self?.todoViewModel.updateTodo(oldTodo: (self?.todoViewModel.todos[index])!, newTodo: todo)
                 }
                 self?.table.reloadData()
-                //                self?.presentDialog(title: isAdd ? "Entry Added" : "Entry Updated", details: isAdd ? "A new todo has been successfully added" : "Your todo item has been successfully updated", buttonTitle: "Done", completion: {
-                //                    self?.table.reloadData()
-                //                    self?.dismiss(animated: true)
-                //                })
             } else {
                 self?.presentDialog(title: "Invalid Entries!", details: "Please, ensure to enter in the title and details of your todo.", buttonTitle: "OK", completion: {
                     self?.dismiss(animated: true, completion: {
@@ -95,6 +105,14 @@ final class RootViewController: UIViewController {
         present(alertController, animated: true)
     }
     
+    fileprivate func hideNoTodoLabel() {
+        if todoViewModel.todos.count > 0 {
+            noTodosLabel.isHidden = true
+        } else {
+            noTodosLabel.isHidden = false
+        }
+    }
+    
 }
 
 // MARK: - UITableView Extensions
@@ -102,7 +120,8 @@ final class RootViewController: UIViewController {
 extension RootViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        todoViewModel.todos.count
+        hideNoTodoLabel()
+        return todoViewModel.todos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -130,6 +149,9 @@ extension RootViewController: UITableViewDelegate {
         save.backgroundColor = .systemGreen
         
         let delete = UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, _ in
+            if let todo = self?.todoViewModel.todos[indexPath.row] {
+                self?.todoViewModel.deleteTodo(todo: todo)
+            }
             self?.todoViewModel.todos.remove(at: indexPath.row)
             self?.table.reloadData()
         }

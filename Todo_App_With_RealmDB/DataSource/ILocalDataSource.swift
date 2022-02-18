@@ -11,7 +11,7 @@ import Foundation
 protocol ILocalDataSource {
     func saveTodo(todo: Todo)
     func fetchAllTodos() -> [Todo]
-    func editTodo(todo: Todo)
+    func editTodo(oldTodo: Todo, newTodo: Todo)
     func deleteTodo(todo: Todo)
     func getDatabaseURL() -> URL?
 }

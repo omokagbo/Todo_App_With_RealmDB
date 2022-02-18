@@ -16,5 +16,5 @@ protocol ITodoViewModel {
     func saveTodo(todo: Todo)
     func fetchAllTodos()
     func deleteTodo(todo: Todo)
-    func updateTodo(todo: Todo)
+    func updateTodo(oldTodo: Todo, newTodo: Todo)
 }

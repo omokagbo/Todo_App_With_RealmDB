@@ -28,10 +28,10 @@ final class TodoViewModel: ITodoViewModel {
     }
     
     func deleteTodo(todo: Todo) {
-        
+        dataSource.deleteTodo(todo: todo)
     }
     
-    func updateTodo(todo: Todo) {
-        
+    func updateTodo(oldTodo: Todo, newTodo: Todo) {
+        dataSource.editTodo(oldTodo: oldTodo, newTodo: newTodo)
     }
 }

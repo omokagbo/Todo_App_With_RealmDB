@@ -7,8 +7,15 @@
 	
 
 import Foundation
+import RealmSwift
 
-struct Todo: Codable {
-    let title: String
-    let details: String
+class Todo: Object {
+    @Persisted var title: String
+    @Persisted var details: String
+    
+    convenience init(title: String, details: String) {
+        self.init()
+        self.title = title
+        self.details = details
+    }
 }
