@@ -15,7 +15,7 @@ struct DependencyProvider {
         return TodoViewModel(todos: self.todos)
     }
     
-    static var viewController: RootViewController {
+    static var rootViewController: RootViewController {
         let vc = RootViewController()
         vc.todoViewModel = todoViewModel
         return vc
