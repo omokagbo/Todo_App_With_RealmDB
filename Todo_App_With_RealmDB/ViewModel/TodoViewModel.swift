@@ -7,11 +7,31 @@
 	
 
 import Foundation
+import RealmSwift
 
 final class TodoViewModel: ITodoViewModel {
-    var todos: [Todo]
     
-    init(todos: [Todo]) {
+    var todos: [Todo]
+    var dataSource: ILocalDataSource
+    
+    init(todos: [Todo], dataSource: ILocalDataSource) {
         self.todos = todos
+        self.dataSource = dataSource
+    }
+    
+    func saveTodo(todo: Todo) {
+        dataSource.saveTodo(todo: todo)
+    }
+    
+    func fetchAllTodos(){
+        self.todos = dataSource.fetchAllTodos()
+    }
+    
+    func deleteTodo(todo: Todo) {
+        
+    }
+    
+    func updateTodo(todo: Todo) {
+        
     }
 }

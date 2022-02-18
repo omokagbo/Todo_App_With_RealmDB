@@ -25,6 +25,12 @@ final class RootViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(table)
         setupUI()
+        print(todoViewModel.dataSource.getDatabaseURL() ?? "Could not get location of database")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        todoViewModel.fetchAllTodos()
     }
     
     // MARK: - Helpers
@@ -38,18 +44,20 @@ final class RootViewController: UIViewController {
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewTodo))
+        
+        todoViewModel.fetchAllTodos()
     }
     
     @objc fileprivate func addNewTodo() {
         isAddNewTodo(isAdd: true, index: 0)
     }
     
-    /// Function to Add or Update a A Todo Item
+    /// Add a new todo  or update the details of an existing todo Item
     /// - Parameters:
     ///   - isAdd: value to show if it is a new todo item or an update to an existing todo item. If it is true, it is a new todo item else it is updating an existing todo item
     ///   - index: index of the todo item
     fileprivate func isAddNewTodo(isAdd: Bool, index: Int) {
-        let alertController = UIAlertController(title: isAdd ? "Add New Todo" : "Update your todo", message: "Please enter your todo details", preferredStyle: .alert)
+        let alertController = UIAlertController(title: isAdd ? "Add New Todo" : "Update your todo", message: isAdd ? "Please, enter your todo details" : "Please, update your todo details", preferredStyle: .alert)
         
         alertController.addTextField { [weak self] title in
             title.placeholder = isAdd ? "Enter Todo title" : self?.todoViewModel.todos[index].title
@@ -60,14 +68,19 @@ final class RootViewController: UIViewController {
         }
         
         alertController.addAction(UIAlertAction(title: isAdd ? "Save" : "Update", style: .default, handler: { [weak self] _ in
-            if let title = alertController.textFields?.first?.text, !title.isEmpty, let details = alertController.textFields?[1].text, !details.isEmpty {
+            if let title = alertController.textFields?.first?.text, !title.isEmpty, title.count > 2, let details = alertController.textFields?[1].text, !details.isEmpty, details.count > 2 {
                 let todo = Todo(title: title, details: details)
                 if isAdd {
                     self?.todoViewModel.todos.insert(todo, at: index)
+                    self?.todoViewModel.saveTodo(todo: todo)
                 } else {
                     self?.todoViewModel.todos[index] = todo
                 }
                 self?.table.reloadData()
+                //                self?.presentDialog(title: isAdd ? "Entry Added" : "Entry Updated", details: isAdd ? "A new todo has been successfully added" : "Your todo item has been successfully updated", buttonTitle: "Done", completion: {
+                //                    self?.table.reloadData()
+                //                    self?.dismiss(animated: true)
+                //                })
             } else {
                 self?.presentDialog(title: "Invalid Entries!", details: "Please, ensure to enter in the title and details of your todo.", buttonTitle: "OK", completion: {
                     self?.dismiss(animated: true, completion: {

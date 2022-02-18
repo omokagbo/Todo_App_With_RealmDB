@@ -31,10 +31,6 @@ class DialogViewController: UIViewController {
         setupUI()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.dismiss(animated: true)
-    }
-    
     // MARK: - IBActions
     
     @IBAction func actionButtonTapped(_ sender: UIButton) {

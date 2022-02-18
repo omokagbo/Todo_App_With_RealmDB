@@ -1,5 +1,5 @@
 //
-// ITodoViewModel.swift
+// IRemoteDataSource.swift
 // Todo_App_With_RealmDB
 
 //  Created by Emmanuel Omokagbo on 18/02/2022
@@ -7,14 +7,11 @@
 	
 
 import Foundation
-import RealmSwift
 
-protocol ITodoViewModel {
-    var todos: [Todo] { get set }
-    var dataSource: ILocalDataSource { get set }
-    
+protocol ILocalDataSource {
     func saveTodo(todo: Todo)
-    func fetchAllTodos()
+    func fetchAllTodos() -> [Todo]
+    func editTodo(todo: Todo)
     func deleteTodo(todo: Todo)
-    func updateTodo(todo: Todo)
+    func getDatabaseURL() -> URL?
 }
