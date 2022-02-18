@@ -33,7 +33,7 @@ final class RootViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(table)
         setupUI()
-        //        print(todoViewModel.dataSource.getDatabaseURL() ?? "Could not get location of database")
+//        debugPrint(todoViewModel.repo.getDatabaseURL() ?? "Could not get location of database")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -128,7 +128,9 @@ extension RootViewController: UITableViewDataSource {
         var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel?.text = todoViewModel.todos[indexPath.row].title
+        cell.textLabel?.font = UIFont(name: "Avenir", size: 20)
         cell.detailTextLabel?.text = todoViewModel.todos[indexPath.row].details
+        cell.detailTextLabel?.font = UIFont(name: "Avenir", size: 14)
         return cell
     }
     
