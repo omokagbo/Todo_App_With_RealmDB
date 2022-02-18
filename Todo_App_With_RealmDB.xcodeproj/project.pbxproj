@@ -26,9 +26,9 @@
 		B456A76D27C00B9800F4868A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A76C27C00B9800F4868A /* AppConstants.swift */; };
 		B456A77027C017E700F4868A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B456A76F27C017E700F4868A /* Realm */; };
 		B456A77227C017E700F4868A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B456A77127C017E700F4868A /* RealmSwift */; };
-		B456A77527C01DDD00F4868A /* ILocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77427C01DDD00F4868A /* ILocalDataSource.swift */; };
-		B456A77727C01DF500F4868A /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77627C01DF500F4868A /* LocalDataSource.swift */; };
-		B456A77A27C04D5200F4868A /* ITodoLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77927C04D5200F4868A /* ITodoLocalRepository.swift */; };
+		B456A77527C01DDD00F4868A /* IDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77427C01DDD00F4868A /* IDataSource.swift */; };
+		B456A77727C01DF500F4868A /* RealmLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77627C01DF500F4868A /* RealmLocalDataSource.swift */; };
+		B456A77A27C04D5200F4868A /* ITodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77927C04D5200F4868A /* ITodoRepository.swift */; };
 		B456A77C27C04D6600F4868A /* TodoLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77B27C04D6600F4868A /* TodoLocalRepository.swift */; };
 		B456A78027C0516000F4868A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456A77F27C0516000F4868A /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
@@ -72,9 +72,9 @@
 		B456A76727C0036900F4868A /* Dialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dialog.storyboard; sourceTree = "<group>"; };
 		B456A76A27C0040000F4868A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B456A76C27C00B9800F4868A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		B456A77427C01DDD00F4868A /* ILocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalDataSource.swift; sourceTree = "<group>"; };
-		B456A77627C01DF500F4868A /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
-		B456A77927C04D5200F4868A /* ITodoLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITodoLocalRepository.swift; sourceTree = "<group>"; };
+		B456A77427C01DDD00F4868A /* IDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDataSource.swift; sourceTree = "<group>"; };
+		B456A77627C01DF500F4868A /* RealmLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLocalDataSource.swift; sourceTree = "<group>"; };
+		B456A77927C04D5200F4868A /* ITodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITodoRepository.swift; sourceTree = "<group>"; };
 		B456A77B27C04D6600F4868A /* TodoLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoLocalRepository.swift; sourceTree = "<group>"; };
 		B456A77F27C0516000F4868A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,8 +135,8 @@
 				B456A75427BFD56700F4868A /* Model */,
 				B456A75327BFD17100F4868A /* Views */,
 				B456A75727BFD5A000F4868A /* ViewModel */,
-				B456A77327C01DC300F4868A /* DataSource */,
 				B456A77827C04D3200F4868A /* Repository */,
+				B456A77327C01DC300F4868A /* DataSource */,
 				B456A76627C0035200F4868A /* Storyboards */,
 				B456A76927C003EB00F4868A /* Utils */,
 				B456A75027BFD14C00F4868A /* LaunchScreen */,
@@ -243,8 +243,8 @@
 		B456A77327C01DC300F4868A /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				B456A77427C01DDD00F4868A /* ILocalDataSource.swift */,
-				B456A77627C01DF500F4868A /* LocalDataSource.swift */,
+				B456A77427C01DDD00F4868A /* IDataSource.swift */,
+				B456A77627C01DF500F4868A /* RealmLocalDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 		B456A77827C04D3200F4868A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				B456A77927C04D5200F4868A /* ITodoLocalRepository.swift */,
+				B456A77927C04D5200F4868A /* ITodoRepository.swift */,
 				B456A77B27C04D6600F4868A /* TodoLocalRepository.swift */,
 			);
 			path = Repository;
@@ -406,19 +406,19 @@
 			files = (
 				B456A76527C0032D00F4868A /* UIViewcontroller+Extension.swift in Sources */,
 				B456A76D27C00B9800F4868A /* AppConstants.swift in Sources */,
-				B456A77527C01DDD00F4868A /* ILocalDataSource.swift in Sources */,
+				B456A77527C01DDD00F4868A /* IDataSource.swift in Sources */,
 				B456A76027BFFAAD00F4868A /* AppDependencyProvider.swift in Sources */,
 				B456A78027C0516000F4868A /* AppCoordinator.swift in Sources */,
 				B456A72427BFD10000F4868A /* RootViewController.swift in Sources */,
 				B456A77C27C04D6600F4868A /* TodoLocalRepository.swift in Sources */,
-				B456A77A27C04D5200F4868A /* ITodoLocalRepository.swift in Sources */,
+				B456A77A27C04D5200F4868A /* ITodoRepository.swift in Sources */,
 				B456A72027BFD10000F4868A /* AppDelegate.swift in Sources */,
 				B456A75D27BFEACC00F4868A /* ITodoViewModel.swift in Sources */,
 				B456A76227C0031400F4868A /* DialogViewController.swift in Sources */,
 				B456A72227BFD10000F4868A /* SceneDelegate.swift in Sources */,
 				B456A75B27BFDDFB00F4868A /* TodoViewModel.swift in Sources */,
 				B456A76B27C0040000F4868A /* UIView+Extension.swift in Sources */,
-				B456A77727C01DF500F4868A /* LocalDataSource.swift in Sources */,
+				B456A77727C01DF500F4868A /* RealmLocalDataSource.swift in Sources */,
 				B456A75927BFD5DC00F4868A /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

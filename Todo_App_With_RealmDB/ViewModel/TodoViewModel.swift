@@ -4,7 +4,6 @@
 
 //  Created by Emmanuel Omokagbo on 18/02/2022
 //  Copyright © 2022 Emmanuel Omokagbo. All rights reserved.
-	
 
 import Foundation
 import RealmSwift
@@ -12,9 +11,9 @@ import RealmSwift
 final class TodoViewModel: ITodoViewModel {
     
     var todos: [Todo]
-    var repo: ITodoLocalRepository
+    var repo: ITodoRepository
     
-    init(todos: [Todo], repo: ITodoLocalRepository) {
+    init(todos: [Todo], repo: ITodoRepository) {
         self.todos = todos
         self.repo = repo
     }

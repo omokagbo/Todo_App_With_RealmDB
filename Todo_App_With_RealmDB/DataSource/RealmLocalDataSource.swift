@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-final class LocalDataSource: ILocalDataSource {
+final class RealmLocalDataSource: IDataSource {
     
     fileprivate let realm: Realm!
     

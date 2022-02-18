@@ -4,15 +4,15 @@
 
 //  Created by Emmanuel Omokagbo on 18/02/2022
 //  Copyright © 2022 Emmanuel Omokagbo. All rights reserved.
-	
+
 
 import Foundation
 
-final class TodoLocalRepository: ITodoLocalRepository {
+final class TodoLocalRepository: ITodoRepository {
     
-    var dataSource: ILocalDataSource
+    var dataSource: IDataSource
     
-    init(dataSource: ILocalDataSource) {
+    init(dataSource: IDataSource) {
         self.dataSource = dataSource
     }
     

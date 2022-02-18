@@ -13,11 +13,11 @@ struct AppDependencyProvider {
     static var todos = [Todo]()
     static var realm = try! Realm()
     
-    static var dataSource: ILocalDataSource {
-        return LocalDataSource(realm: realm)
+    static var dataSource: IDataSource {
+        return RealmLocalDataSource(realm: realm)
     }
     
-    static var repo: ITodoLocalRepository {
+    static var repo: ITodoRepository {
         return TodoLocalRepository(dataSource: self.dataSource)
     }
     
