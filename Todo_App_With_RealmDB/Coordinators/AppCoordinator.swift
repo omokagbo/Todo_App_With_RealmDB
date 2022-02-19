@@ -10,13 +10,21 @@ import UIKit
 
 final class AppCoordinator {
     
+    // MARK: - Properties
+    
     private let navigationController = UINavigationController()
     
     var rootViewController: UINavigationController {
         return navigationController
     }
     
+    // MARK: - Methods
+    
     func start() {
+        showTodos()
+    }
+    
+    fileprivate func showTodos() {
         let controller = AppDependencyProvider.rootViewController
         navigationController.pushViewController(controller, animated: true)
     }
